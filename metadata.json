@@ -1,0 +1,6 @@
+{
+  "name": "Luminary Guild",
+  "description": "Enterprise-grade event planning architecture, corporate conferences, luxury brand activations, high-touch galas, and procurement RFP engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
