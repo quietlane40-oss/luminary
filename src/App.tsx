@@ -6,7 +6,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HeroSection } from './components/HeroSection';
 import { ServicesView } from './components/ServicesView';
-import { PortfolioView } from './components/PortfolioView';
+import { PortfolioView, PORTFOLIO_CASE_STUDIES } from './components/PortfolioView';
 import { CaseStudyCard } from './components/CaseStudyCard';
 import { CaseStudyModal } from './components/CaseStudyModal';
 import { AboutView } from './components/AboutView';
@@ -197,7 +197,7 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                {CASE_STUDIES.slice(0, 4).map((cs) => (
+                {PORTFOLIO_CASE_STUDIES.slice(0, 2).map((cs) => (
                   <CaseStudyCard
                     key={cs.id}
                     caseStudy={cs}
@@ -211,7 +211,7 @@ export default function App() {
                   onClick={() => navigateTo('portfolio')}
                   className="px-6 py-3 text-xs font-bold uppercase tracking-wider text-purple-950 hover:text-purple-900 bg-white hover:bg-purple-50 border border-purple-300 hover:border-purple-400 rounded-xl shadow-xs transition-all inline-flex items-center space-x-2"
                 >
-                  <span>View All 140+ Confidential Case Studies</span>
+                  <span>View other Confidential Case Studies</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -238,7 +238,7 @@ export default function App() {
                         <div className="text-xs text-purple-700 font-medium">Lead Producers CMP/CMM</div>
                       </div>
                       <div className="border-l-2 border-purple-600 pl-3">
-                        <div className="text-lg font-bold font-serif-luxury text-purple-950">$20,000,000</div>
+                        <div className="text-lg font-bold font-serif-luxury text-purple-950">Ksh200,000</div>
                         <div className="text-xs text-purple-700 font-medium">Commercial Liability Policy</div>
                       </div>
                     </div>
@@ -250,50 +250,11 @@ export default function App() {
                       >
                         Meet Certified Leadership
                       </button>
-                      <button
-                        onClick={() => setIsDeckOpen(true)}
-                        className="px-5 py-2.5 text-xs font-bold text-purple-950 bg-gradient-to-r from-amber-300 to-amber-400 hover:from-amber-200 hover:to-amber-300 border border-amber-400 rounded-md transition-colors flex items-center space-x-1.5 shadow-xs"
-                      >
-                        <FileText className="w-3.5 h-3.5" />
-                        <span>Download Capabilities Deck (PDF)</span>
-                      </button>
+              
                     </div>
                   </div>
 
-                  <div className="bg-purple-50/70 border border-purple-200 rounded-xl p-6 space-y-4">
-                    <div className="text-xs font-mono uppercase text-purple-900 font-bold">
-                      Enterprise Technology Integrations
-                    </div>
-                    <div className="space-y-3 text-xs">
-                      <div className="flex items-start space-x-3">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="text-purple-900/90">
-                          <strong>Microsoft Dynamics 365 &amp; Power Automate:</strong> Native lead capture telemetry and automated RFP routing.
-                        </span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="text-purple-900/90">
-                          <strong>Microsoft SharePoint &amp; Teams Gateway:</strong> Secure client workspace with live run-of-show spreadsheets and CAD drawings.
-                        </span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="text-purple-900/90">
-                          <strong>Microsoft Bookings API:</strong> Instant executive 30-minute discovery briefing slot reservation.
-                        </span>
-                      </div>
-                    </div>
-                    <div className="pt-2">
-                      <button
-                        onClick={() => setIsPortalOpen(true)}
-                        className="w-full py-2.5 text-xs font-semibold text-white bg-[#0078D4] hover:bg-[#006cbd] rounded-md transition-colors flex items-center justify-center space-x-2 shadow-xs"
-                      >
-                        <Lock className="w-3.5 h-3.5" />
-                        <span>Inspect Client Portal (SharePoint SSO)</span>
-                      </button>
-                    </div>
-                  </div>
+          
                 </div>
               </div>
             </section>

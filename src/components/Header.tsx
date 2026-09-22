@@ -106,10 +106,10 @@ export const Header: React.FC<HeaderProps> = ({
                     className="w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
                   >
                     <div className="text-sm font-semibold text-purple-950 group-hover:text-purple-700">
-                      Corporate Conferences &amp; Summits
+                      Wedding &amp; Bridal celebrations
                     </div>
                     <div className="text-xs text-purple-700/80 mt-0.5">
-                      Flagship AV, broadcast redundancy, Dante audio, 500-15k+ scale.
+                      Produce breathtaking weddings and bridal celebrations tailored to your personal love story.
                     </div>
                   </button>
                   <button

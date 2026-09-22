@@ -4,7 +4,7 @@ import { CASE_STUDIES } from '../data/mockData';
 import { CaseStudyCard } from './CaseStudyCard';
 import { Search, ArrowRight } from 'lucide-react';
 
-const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
+export const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
   {
     ...CASE_STUDIES[1],
     id: 'wedding-bridal-celebration',
