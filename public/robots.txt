@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luminaryguild.co.ke/sitemap.xml
+Sitemap: https://www.luminaryguild.co.ke/sitemap.xml
