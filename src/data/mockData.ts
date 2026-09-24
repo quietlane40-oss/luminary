@@ -179,7 +179,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
     name: 'Stephen Odhiambo',
     role: 'Technical Officer',
     credentials: ['DES (Digital Event Strategist)', 'CTS-D Certified', 'SMPTE Fellow'],
-    bio: 'I oversee all technical operations, audiovisual setups, and digital tools across live and hybrid events. Bringing 4 years of expertise in network architecture, live production engineering, and AV vendor management, [Name] ensures every event delivers flawless audio, visual, and interactive experiences without a hitch.',
+    bio: 'I oversee all technical operations, audiovisual setups, and digital tools across live and hybrid events. Bringing 4 years of expertise in network architecture, live production engineering, and AV vendor management, Stephen ensures every event delivers flawless audio, visual, and interactive experiences without a hitch.',
     experienceYears: 4,
     formerAffiliations: ['NBC Olympics Broadcast', 'Production Resource Group (PRG)', 'TED Conferences'],
     image: eventImages.stephen,
