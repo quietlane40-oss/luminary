@@ -3,6 +3,18 @@ import { Helmet } from 'react-helmet-async';
 import { PageView } from './types';
 import { eventImages } from './assets';
 
+const SITE_URL = 'https://www.luminaryguild.co.ke';
+
+interface ServiceMetadata {
+  name: string;
+}
+
+interface PageMetadata {
+  title: string;
+  description: string;
+  service?: ServiceMetadata;
+}
+
 export const PAGE_PATHS: Record<PageView, string> = {
   home: '/',
   'corporate-conferences': '/services/corporate-conferences',
@@ -14,38 +26,41 @@ export const PAGE_PATHS: Record<PageView, string> = {
   rfp: '/inquiry',
 };
 
-const PAGE_METADATA: Record<PageView, { title: string; description: string }> = {
+const PAGE_METADATA: Record<PageView, PageMetadata> = {
   home: {
-    title: 'Luminary Guild | Event Planning & Decoration in Kenya',
-    description: 'Luminary Guild creates beautifully planned weddings, celebrations, corporate events, and brand activations with thoughtful decoration across Kenya.',
+    title: 'Luminary Guild | Event Planning & Management in Kenya',
+    description: 'Luminary Guild is a Kenyan event planning and management company creating corporate conferences, brand activations, galas and memorable event experiences.',
   },
   'corporate-conferences': {
-    title: 'Wedding & Bridal Celebrations | Luminary Guild Kenya',
-    description: 'Plan a beautiful wedding or bridal celebration in Kenya with Luminary Guild\'s creative styling, bespoke decor, and careful event-day coordination.',
+    title: 'Corporate Conference Planning & Management in Kenya | Luminary Guild',
+    description: 'Professional corporate conference planning and event management in Kenya, from event strategy and production to coordination and guest experience.',
+    service: { name: 'Corporate Conference Planning' },
   },
   'brand-activations': {
-    title: 'Brand Activations & Launches | Luminary Guild Kenya',
-    description: 'Create memorable brand activations and product launches in Kenya with immersive spatial styling, custom decor, and coordinated event flow.',
+    title: 'Brand Activation & Experiential Events in Kenya | Luminary Guild',
+    description: 'Luminary Guild creates strategic brand activations and experiential events in Kenya designed to connect brands with audiences through memorable experiences.',
+    service: { name: 'Brand Activation and Experiential Events' },
   },
   'galas-celebrations': {
-    title: 'Birthday & Baby Shower Decoration | Luminary Guild Kenya',
-    description: 'Celebrate life\'s milestones with Luminary Guild\'s bespoke balloon art, themed decor, dining displays, and seamless birthday and baby shower coordination.',
+    title: 'Gala & Celebration Event Planning in Kenya | Luminary Guild',
+    description: 'From elegant galas to private celebrations, Luminary Guild plans and delivers memorable events with creative concepts, production and seamless coordination.',
+    service: { name: 'Gala and Celebration Event Planning' },
   },
   portfolio: {
-    title: 'Event Portfolio & Case Studies | Luminary Guild Kenya',
-    description: 'Explore Luminary Guild event case studies covering weddings, private celebrations, brand activations, and professionally managed experiences.',
+    title: 'Event Portfolio | Luminary Guild Kenya',
+    description: 'Explore selected events and experiences delivered by Luminary Guild across corporate events, brand activations, galas and celebrations in Kenya.',
   },
   about: {
-    title: 'About Luminary Guild | Kenyan Event Planning & Decoration',
-    description: 'Meet the Luminary Guild team and learn how thoughtful design, local craftsmanship, and careful planning shape memorable events across Kenya.',
+    title: 'About Luminary Guild | Event Management Company in Kenya',
+    description: 'Learn about Luminary Guild, a Kenyan event planning and management company focused on creating meaningful, well-executed and memorable event experiences.',
   },
   pricing: {
-    title: 'Event Planning Packages & Pricing | Luminary Guild Kenya',
-    description: 'Review Luminary Guild event decoration and planning packages, then use the investment calculator to outline your event requirements in Kenya shillings.',
+    title: 'Event Investment & Partnerships | Luminary Guild Kenya',
+    description: 'Learn about opportunities to work with Luminary Guild through event partnerships, investment and strategic collaborations in Kenya.',
   },
   rfp: {
-    title: 'Plan Your Event | Request a Proposal | Luminary Guild Kenya',
-    description: 'Tell Luminary Guild about your wedding, celebration, corporate event, or brand activation and request tailored planning and decoration options.',
+    title: 'Contact Luminary Guild | Plan Your Event in Kenya',
+    description: 'Get in touch with Luminary Guild to discuss corporate conferences, brand activations, galas, celebrations and other event requirements in Kenya.',
   },
 };
 
@@ -54,32 +69,52 @@ export function pageFromPath(pathname: string): PageView {
   return match ?? 'home';
 }
 
-function getSiteUrl(): string {
-  const configuredUrl = import.meta.env.VITE_SITE_URL?.trim();
-  const origin = typeof window !== 'undefined' ? window.location.origin : '';
-  return (configuredUrl || origin).replace(/\/$/, '');
-}
-
 export function Seo({ page }: { page: PageView }) {
   const metadata = PAGE_METADATA[page];
-  const siteUrl = getSiteUrl();
-  const canonicalUrl = `${siteUrl}${PAGE_PATHS[page]}`;
-  const imageUrl = new URL(eventImages.wedding, siteUrl).href;
-  const businessSchema = {
+  const canonicalUrl = `${SITE_URL}${PAGE_PATHS[page]}`;
+  // TODO: Replace this event photo with a dedicated 1200x630 branded social sharing image.
+  const imagePath = new URL(eventImages.wedding, SITE_URL).pathname;
+  const imageUrl = new URL(imagePath, `${SITE_URL}/`).href;
+  const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'EventPlanner',
+    '@type': 'Organization',
     name: 'Luminary Guild',
-    url: siteUrl,
-    description: 'Kenyan event planning and decoration company creating beautiful, memorable celebrations and professionally styled events.',
-    areaServed: 'Kenya',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Nairobi',
-      addressCountry: 'KE',
+    url: `${SITE_URL}/`,
+    areaServed: {
+      '@type': 'Country',
+      name: 'Kenya',
     },
-    email: 'nyamwalo402@gmail.com',
-    telephone: ['+254792604341', '+254111464092'],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: 'nyamwalo402@gmail.com',
+        telephone: '+254792604341',
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        telephone: '+254111464092',
+      },
+    ],
   };
+  const serviceSchema = metadata.service
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: metadata.service.name,
+        provider: {
+          '@type': 'Organization',
+          name: 'Luminary Guild',
+          url: `${SITE_URL}/`,
+        },
+        areaServed: {
+          '@type': 'Country',
+          name: 'Kenya',
+        },
+      }
+    : undefined;
+  const structuredData = page === 'home' ? organizationSchema : serviceSchema;
 
   return (
     <Helmet>
@@ -88,17 +123,19 @@ export function Seo({ page }: { page: PageView }) {
       <meta name="description" content={metadata.description} />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:site_name" content="Luminary Guild" />
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
-      <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:site_name" content="Luminary Guild" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metadata.title} />
       <meta name="twitter:description" content={metadata.description} />
       <meta name="twitter:image" content={imageUrl} />
-      <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
+      {structuredData && (
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      )}
     </Helmet>
   );
 }

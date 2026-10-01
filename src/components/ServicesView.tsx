@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PageView } from '../types';
+import { PAGE_PATHS } from '../seo';
 import { eventImages } from '../assets';
 import { 
   Gift, 
@@ -38,6 +39,15 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
         : 'corporate'
   );
 
+  const handleInquiryLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    event.preventDefault();
+    onNavigate('rfp');
+  };
+
   return (
     <div className="bg-[#fbf9fe] min-h-screen text-purple-950 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -50,7 +60,11 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-purple-950 mb-4">
-            Services Engineered for High-Stakes Impact
+            {activeService === 'corporate'
+              ? 'Corporate Conference Planning & Management'
+              : activeService === 'activation'
+                ? 'Brand Activation & Experiential Events'
+                : 'Gala & Celebration Event Planning'}
           </h1>
           <p className="text-sm sm:text-base text-purple-800/85 leading-relaxed">
             Every engagement is supported by rigorous technical team. Choose a specialized service to examine the operational framework.
@@ -165,12 +179,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                 </div>
 
                 <div className="pt-4 flex flex-wrap gap-4">
-                  <button
-                    onClick={() => onNavigate('rfp')}
+                  <a
+                    href={PAGE_PATHS.rfp}
+                    onClick={handleInquiryLinkClick}
                     className="px-6 py-3 text-xs font-bold uppercase tracking-wider text-purple-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 rounded-md font-heading transition-all shadow-sm"
                   >
                     Request Conference RFP
-                  </button>
+                  </a>
                   <button
                     onClick={onOpenBooking}
                     className="px-6 py-3 text-xs font-semibold text-purple-950 bg-purple-100 hover:bg-purple-200 border border-purple-200 rounded-md transition-colors"
@@ -269,12 +284,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                 </div>
 
                 <div className="pt-4 flex flex-wrap gap-4">
-                  <button
-                    onClick={() => onNavigate('rfp')}
+                  <a
+                    href={PAGE_PATHS.rfp}
+                    onClick={handleInquiryLinkClick}
                     className="px-6 py-3 text-xs font-bold uppercase tracking-wider text-purple-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 rounded-md font-heading transition-all shadow-sm"
                   >
                     Request Activation Proposal
-                  </button>
+                  </a>
                   <button
                     onClick={onOpenBooking}
                     className="px-6 py-3 text-xs font-semibold text-purple-950 bg-purple-100 hover:bg-purple-200 border border-purple-200 rounded-md transition-colors"
@@ -334,12 +350,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                 </div>
 
                 <div className="pt-4 flex flex-wrap gap-4">
-                  <button
-                    onClick={() => onNavigate('rfp')}
+                  <a
+                    href={PAGE_PATHS.rfp}
+                    onClick={handleInquiryLinkClick}
                     className="px-6 py-3 text-xs font-bold uppercase tracking-wider text-purple-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 rounded-md font-heading transition-all shadow-sm"
                   >
                     Request Birthday Proposal
-                  </button>
+                  </a>
                   <button
                     onClick={onOpenBooking}
                     className="px-6 py-3 text-xs font-semibold text-purple-950 bg-purple-100 hover:bg-purple-200 border border-purple-200 rounded-md transition-colors"

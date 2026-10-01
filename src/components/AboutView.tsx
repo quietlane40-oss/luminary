@@ -21,7 +21,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onOpenBooking 
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-purple-950 mb-4">
-            The Leadership Behind Luminary Guild
+            About Luminary Guild
           </h1>
         </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageView } from '../types';
+import { PAGE_PATHS } from '../seo';
 import { FileText, Lock, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
@@ -15,6 +16,15 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenPortal,
   onOpenDeck
 }) => {
+  const handlePageLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, page: PageView) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    event.preventDefault();
+    onNavigate(page);
+  };
+
   return (
     <footer className="bg-purple-100/90 border-t border-purple-200 text-purple-900">
 
@@ -108,48 +118,53 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2 text-xs text-purple-800">
 
               <li>
-                <button
-                  onClick={() => onNavigate('corporate-conferences')}
+                <a
+                  href={PAGE_PATHS['corporate-conferences']}
+                  onClick={(event) => handlePageLinkClick(event, 'corporate-conferences')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Corporate Events &amp; Conferences
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('brand-activations')}
+                <a
+                  href={PAGE_PATHS['brand-activations']}
+                  onClick={(event) => handlePageLinkClick(event, 'brand-activations')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Brand Activations &amp; Launches
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('galas-celebrations')}
+                <a
+                  href={PAGE_PATHS['galas-celebrations']}
+                  onClick={(event) => handlePageLinkClick(event, 'galas-celebrations')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Weddings &amp; Celebrations
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('galas-celebrations')}
+                <a
+                  href={PAGE_PATHS['galas-celebrations']}
+                  onClick={(event) => handlePageLinkClick(event, 'galas-celebrations')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Event Decoration &amp; Styling
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('pricing')}
+                <a
+                  href={PAGE_PATHS.pricing}
+                  onClick={(event) => handlePageLinkClick(event, 'pricing')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Event Planning &amp; Coordination
-                </button>
+                </a>
               </li>
 
             </ul>
@@ -164,48 +179,53 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2 text-xs text-purple-800">
 
               <li>
-                <button
-                  onClick={() => onNavigate('portfolio')}
+                <a
+                  href={PAGE_PATHS.portfolio}
+                  onClick={(event) => handlePageLinkClick(event, 'portfolio')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Our Events
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('about')}
+                <a
+                  href={PAGE_PATHS.about}
+                  onClick={(event) => handlePageLinkClick(event, 'about')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   About Luminary Guild
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('pricing')}
+                <a
+                  href={PAGE_PATHS.pricing}
+                  onClick={(event) => handlePageLinkClick(event, 'pricing')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Packages &amp; Pricing
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('rfp')}
+                <a
+                  href={PAGE_PATHS.rfp}
+                  onClick={(event) => handlePageLinkClick(event, 'rfp')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Plan Your Event
-                </button>
+                </a>
               </li>
 
               <li>
-                <button
-                  onClick={() => onNavigate('portfolio')}
+                <a
+                  href={PAGE_PATHS.portfolio}
+                  onClick={(event) => handlePageLinkClick(event, 'portfolio')}
                   className="hover:text-purple-950 transition-colors text-left"
                 >
                   Event Inspiration
-                </button>
+                </a>
               </li>
 
             </ul>

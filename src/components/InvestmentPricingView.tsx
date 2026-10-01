@@ -282,7 +282,7 @@ export const InvestmentPricingView: React.FC<InvestmentPricingViewProps> = ({
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-purple-950 mb-4">
-            Package Tier Options
+            Event Investment &amp; Partnerships
           </h1>
 
           <p className="text-sm text-purple-800/80 max-w-2xl mx-auto leading-relaxed">

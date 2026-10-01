@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Master Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif-luxury font-bold text-purple-950 tracking-tight leading-[1.15] mb-6">
-            Elevating Events across Kenya.
+            Event Planning &amp; Management in Kenya
           </h1>
 
           {/* Subheading */}

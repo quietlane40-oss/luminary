@@ -106,6 +106,206 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
       roiSummary: 'A relaxed, heartfelt celebration that made space for every generation and gave the family a memorable milestone to share.'
     },
     tags: ['Private Celebrations', 'Birthday Events', 'Baby Showers', 'Family Hospitality']
+  },
+  {
+    ...CASE_STUDIES[0],
+    id: 'botanical-karen-baby-shower',
+    title: 'A Garden Welcome: Baby Shower Celebration',
+    client: 'Private Family',
+    category: 'corporate',
+    categoryLabel: 'Baby Shower',
+    location: 'Botanical Langata Road, Karen',
+    guestCount: 'Family & Friends',
+    budgetBracket: 'Private Event Production Scope',
+    heroImage: new URL('../../assets/botan.jpeg', import.meta.url).href,
+    summary: 'A warm baby shower at Botanical, bringing family and friends together for a thoughtful celebration surrounded by Karen’s garden setting.',
+    brief: {
+      challenge: 'Create a welcoming baby shower that feels personal and relaxed while keeping the event details coordinated for the host family.',
+      objective: 'Celebrate the growing family with a comfortable guest experience, considered styling, and a smooth event-day flow.',
+      stakeholders: 'The host family, guests, venue team, caterer, and event suppliers.'
+    },
+    strategyExecution: {
+      spatialDesign: 'Used the garden venue as the backdrop for a soft, celebratory setting with a defined gathering and dining area.',
+      avProduction: 'Coordinated background music and event announcements to support the gathering without interrupting conversation.',
+      guestExperience: 'Planned a warm welcome, comfortable seating, refreshments, and time for family moments and gifting.',
+      logisticsRisk: 'Aligned venue access, supplier setup, guest arrival, and event timing with the host family and venue team.'
+    },
+    outcomeMetrics: {
+      primaryMetric: 'Baby Shower',
+      primaryLabel: 'Milestone Celebrated',
+      secondaryMetric: 'Botanical',
+      secondaryLabel: 'Garden Venue',
+      tertiaryMetric: 'Family & Friends',
+      tertiaryLabel: 'Gathered to Celebrate',
+      roiSummary: 'A personal garden celebration bringing loved ones together to welcome the family’s new arrival.'
+    },
+    testimonial: {
+      quote: 'The day felt warm, personal, and easy to enjoy with everyone together.',
+      author: 'Private Client',
+      title: 'Host',
+      company: 'Private Family'
+    },
+    tags: ['Baby Shower', 'Private Celebrations', 'Garden Venue', 'Family Hospitality']
+  },
+  {
+    ...CASE_STUDIES[2],
+    id: 'dari-business-park-brand-activation',
+    title: 'Brand Activation at Dari Business Park',
+    client: 'Brand Client',
+    category: 'activation',
+    categoryLabel: 'Brand Activation',
+    location: 'Dari Business Park Along Ngong Road',
+    guestCount: 'Event Guests',
+    budgetBracket: 'Brand Activation Production Scope',
+    heroImage: new URL('../../assets/brand.jpeg', import.meta.url).href,
+    summary: 'A brand activation at Dari Business Park designed to bring the brand closer to its audience through an engaging, well-coordinated event experience.',
+    brief: {
+      challenge: 'Create a clear and engaging brand presence while coordinating the activation setup, audience flow, and event-day operations.',
+      objective: 'Give guests an accessible way to experience the brand and leave with a memorable impression.',
+      stakeholders: 'The client brand team, event guests, venue team, and activation suppliers.'
+    },
+    strategyExecution: {
+      spatialDesign: 'Arranged the activation space to make the brand presence visible and create a natural route for guest interaction.',
+      avProduction: 'Coordinated the event’s sound and presentation requirements to support the brand programme.',
+      guestExperience: 'Focused the guest journey on a clear welcome, approachable brand interaction, and smooth movement through the space.',
+      logisticsRisk: 'Managed setup timing, supplier coordination, venue requirements, and on-site event flow.'
+    },
+    outcomeMetrics: {
+      primaryMetric: 'Brand Experience',
+      primaryLabel: 'Activation Focus',
+      secondaryMetric: 'Dari Business Park',
+      secondaryLabel: 'Event Venue',
+      tertiaryMetric: 'Guest Interaction',
+      tertiaryLabel: 'Experience Priority',
+      roiSummary: 'A coordinated activation that gave the brand a dedicated space to connect with guests at Dari Business Park.'
+    },
+    testimonial: {
+      quote: 'The activation gave our guests a welcoming and engaging way to experience the brand.',
+      author: 'Brand Client',
+      title: 'Client Representative',
+      company: 'Brand Client'
+    },
+    tags: ['Brand Activation', 'Experiential Marketing', 'Guest Engagement', 'Event Production']
+  },
+  {
+    ...CASE_STUDIES[0],
+    id: 'lazarine-hardy-karen-birthday',
+    title: 'A Birthday Celebration at Lazarine',
+    client: 'Private Family',
+    category: 'corporate',
+    categoryLabel: 'Birthday Celebration',
+    location: 'Karen',
+    guestCount: 'Family & Friends',
+    budgetBracket: 'Private Event Production Scope',
+    heroImage: new URL('../../assets/laz.jpeg', import.meta.url).href,
+    summary: 'A birthday celebration at Lazarine, Hardy, bringing loved ones together for an enjoyable occasion with thoughtful event styling and attentive hosting.',
+    brief: {
+      challenge: 'Make the birthday feel special for the celebrant while ensuring guests can relax and enjoy the occasion.',
+      objective: 'Deliver a smoothly coordinated celebration with a welcoming atmosphere and memorable moments for family and friends.',
+      stakeholders: 'The celebrant, host family, guests, venue team, and event suppliers.'
+    },
+    strategyExecution: {
+      spatialDesign: 'Prepared a celebratory venue layout with a focal area for gathering and key birthday moments.',
+      avProduction: 'Coordinated music and announcements to support the celebration and its programme.',
+      guestExperience: 'Created a warm arrival and an easy flow between socializing, dining, and birthday activities.',
+      logisticsRisk: 'Aligned supplier setup and event timing with the venue and host to keep the day running smoothly.'
+    },
+    outcomeMetrics: {
+      primaryMetric: 'Birthday',
+      primaryLabel: 'Milestone Celebrated',
+      secondaryMetric: 'Lazarine',
+      secondaryLabel: 'Celebration Venue',
+      tertiaryMetric: 'Family & Friends',
+      tertiaryLabel: 'Gathered to Celebrate',
+      roiSummary: 'A joyful birthday gathering at Lazarine, thoughtfully coordinated for the celebrant and their guests.'
+    },
+    testimonial: {
+      quote: 'Everything came together beautifully, and we could focus on celebrating with our guests.',
+      author: 'Private Client',
+      title: 'Host',
+      company: 'Private Family'
+    },
+    tags: ['Birthday Events', 'Private Celebrations', 'Guest Experience', 'Event Coordination']
+  },
+  {
+    ...CASE_STUDIES[1],
+    id: 'pioneer-thika-wedding',
+    title: 'A Wedding Celebration at Pioneer',
+    client: 'Private Family',
+    category: 'gala',
+    categoryLabel: 'Wedding & Bridal Celebration',
+    location: 'Pioneer Thika',
+    guestCount: 'Family & Friends',
+    budgetBracket: 'Wedding Production Scope',
+    heroImage: new URL('../../assets/wed.jpeg', import.meta.url).href,
+    summary: 'A wedding celebration at Pioneer, Thika, bringing the couple’s loved ones together for a meaningful day with considered styling and coordinated event delivery.',
+    brief: {
+      challenge: 'Coordinate the people, suppliers, and programme details needed to make the wedding day feel seamless for the couple and their guests.',
+      objective: 'Create a welcoming wedding experience that lets the couple and their families stay present throughout the celebration.',
+      stakeholders: 'The couple, their families, wedding party, venue team, and event suppliers.'
+    },
+    strategyExecution: {
+      spatialDesign: 'Prepared a ceremony and celebration setting suited to the venue and the couple’s wedding day.',
+      avProduction: 'Coordinated sound and programme cues for the ceremony, speeches, and celebration.',
+      guestExperience: 'Supported guest arrival and movement through the wedding programme with attentive on-site coordination.',
+      logisticsRisk: 'Aligned venue access, supplier schedules, setup, and event timing with the couple and wedding team.'
+    },
+    outcomeMetrics: {
+      primaryMetric: 'Wedding Day',
+      primaryLabel: 'Milestone Celebrated',
+      secondaryMetric: 'Pioneer',
+      secondaryLabel: 'Thika Venue',
+      tertiaryMetric: 'Family & Friends',
+      tertiaryLabel: 'Gathered to Celebrate',
+      roiSummary: 'A thoughtfully coordinated wedding celebration at Pioneer, Thika, shared with the couple’s loved ones.'
+    },
+    testimonial: {
+      quote: 'We were able to enjoy our day with family and friends while the details were taken care of.',
+      author: 'Private Client',
+      title: 'Couple',
+      company: 'Private Family'
+    },
+    tags: ['Wedding Production', 'Wedding & Bridal', 'Guest Experience', 'Event Coordination']
+  },
+  {
+    ...CASE_STUDIES[0],
+    id: 'westlands-birthday-celebration',
+    title: 'A Birthday Celebration in Westlands',
+    client: 'Private Family',
+    category: 'corporate',
+    categoryLabel: 'Birthday Celebration',
+    location: 'Westlands, Nairobi',
+    guestCount: 'Family & Friends',
+    budgetBracket: 'Private Event Production Scope',
+    heroImage: new URL('../../assets/bday.jpeg', import.meta.url).href,
+    summary: 'A birthday gathering in Westlands, bringing family and friends together for a personal celebration with a welcoming atmosphere and coordinated event details.',
+    brief: {
+      challenge: 'Plan a birthday gathering that feels personal to the celebrant and comfortable for the invited guests.',
+      objective: 'Make it easy for the host and guests to enjoy the celebration through thoughtful preparation and smooth coordination.',
+      stakeholders: 'The celebrant, host family, guests, venue team, and event suppliers.'
+    },
+    strategyExecution: {
+      spatialDesign: 'Set up a celebratory space with a clear focal point and comfortable areas for guests to gather.',
+      avProduction: 'Coordinated music and key programme moments to suit the birthday celebration.',
+      guestExperience: 'Supported guest arrival, social time, and the birthday moments that brought everyone together.',
+      logisticsRisk: 'Managed event setup, supplier coordination, and timing with the host and venue.'
+    },
+    outcomeMetrics: {
+      primaryMetric: 'Birthday',
+      primaryLabel: 'Milestone Celebrated',
+      secondaryMetric: 'Westlands',
+      secondaryLabel: 'Event Location',
+      tertiaryMetric: 'Family & Friends',
+      tertiaryLabel: 'Gathered to Celebrate',
+      roiSummary: 'A warm birthday celebration in Westlands, giving the host and guests space to enjoy the occasion together.'
+    },
+    testimonial: {
+      quote: 'The celebration felt personal and gave everyone a chance to enjoy the day together.',
+      author: 'Private Client',
+      title: 'Host',
+      company: 'Private Family'
+    },
+    tags: ['Birthday Events', 'Private Celebrations', 'Westlands', 'Guest Experience']
   }
 ];
 
@@ -143,7 +343,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-slate-100 mb-4">
-            Proven Services. Verified Business Impact.
+            Our Event Portfolio
           </h1>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
             Explore how our three-part framework (The Brief, Strategy &amp; Execution, Outcome &amp; Metrics) turns meaningful celebrations and brand moments into beautifully managed experiences.

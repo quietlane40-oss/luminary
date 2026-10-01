@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PageView } from '../types';
+import { PAGE_PATHS } from '../seo';
 import { 
   ChevronDown, 
   ShieldCheck, 
@@ -38,6 +39,15 @@ export const Header: React.FC<HeaderProps> = ({
     setServicesDropdownOpen(false);
   };
 
+  const handlePageLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, page: PageView) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    event.preventDefault();
+    handleNavClick(page);
+  };
+
   const isServiceActive = ['corporate-conferences', 'brand-activations', 'galas-celebrations'].includes(currentPage);
 
   return (
@@ -67,8 +77,9 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
-            <button
-              onClick={() => handleNavClick('home')}
+            <a
+              href={PAGE_PATHS.home}
+              onClick={(event) => handlePageLinkClick(event, 'home')}
               className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                 currentPage === 'home' 
                   ? 'text-purple-950 bg-purple-200/80 border border-purple-300/80 shadow-xs' 
@@ -76,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               Overview
-            </button>
+            </a>
 
             {/* Services Dropdown */}
             <div className="relative">
@@ -101,9 +112,10 @@ export const Header: React.FC<HeaderProps> = ({
                   <div className="px-3 py-2 text-[11px] font-bold text-purple-700 uppercase tracking-wider border-b border-purple-100 mb-1">
                     Specialized Production Disciplines
                   </div>
-                  <button
-                    onClick={() => handleNavClick('corporate-conferences')}
-                    className="w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
+                  <a
+                    href={PAGE_PATHS['corporate-conferences']}
+                    onClick={(event) => handlePageLinkClick(event, 'corporate-conferences')}
+                    className="block w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
                   >
                     <div className="text-sm font-semibold text-purple-950 group-hover:text-purple-700">
                       Wedding &amp; Bridal celebrations
@@ -111,10 +123,11 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="text-xs text-purple-700/80 mt-0.5">
                       Produce breathtaking weddings and bridal celebrations tailored to your personal love story.
                     </div>
-                  </button>
-                  <button
-                    onClick={() => handleNavClick('brand-activations')}
-                    className="w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
+                  </a>
+                  <a
+                    href={PAGE_PATHS['brand-activations']}
+                    onClick={(event) => handlePageLinkClick(event, 'brand-activations')}
+                    className="block w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
                   >
                     <div className="text-sm font-semibold text-purple-950 group-hover:text-purple-700">
                       Brand Activations &amp; Product Launches
@@ -122,10 +135,11 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="text-xs text-purple-700/80 mt-0.5">
                       Experiential spatial architecture, sensory tech &amp; press unveilings.
                     </div>
-                  </button>
-                  <button
-                    onClick={() => handleNavClick('galas-celebrations')}
-                    className="w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
+                  </a>
+                  <a
+                    href={PAGE_PATHS['galas-celebrations']}
+                    onClick={(event) => handlePageLinkClick(event, 'galas-celebrations')}
+                    className="block w-full text-left p-2.5 rounded-lg hover:bg-purple-50 transition-colors group cursor-pointer"
                   >
                     <div className="text-sm font-semibold text-purple-950 group-hover:text-purple-700">
                       Galas &amp; Social Celebrations
@@ -133,13 +147,14 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="text-xs text-purple-700/80 mt-0.5">
                       Haute decor, Michelin culinary curation &amp; private benefactor auctions.
                     </div>
-                  </button>
+                  </a>
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => handleNavClick('portfolio')}
+            <a
+              href={PAGE_PATHS.portfolio}
+              onClick={(event) => handlePageLinkClick(event, 'portfolio')}
               className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                 currentPage === 'portfolio' 
                   ? 'text-purple-950 bg-purple-200/80 border border-purple-300/80 shadow-xs' 
@@ -147,10 +162,11 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               Case Studies
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('about')}
+            <a
+              href={PAGE_PATHS.about}
+              onClick={(event) => handlePageLinkClick(event, 'about')}
               className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                 currentPage === 'about' 
                   ? 'text-purple-950 bg-purple-200/80 border border-purple-300/80 shadow-xs' 
@@ -158,10 +174,11 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               Leadership &amp; Governance
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('pricing')}
+            <a
+              href={PAGE_PATHS.pricing}
+              onClick={(event) => handlePageLinkClick(event, 'pricing')}
               className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                 currentPage === 'pricing' 
                   ? 'text-purple-950 bg-purple-200/80 border border-purple-300/80 shadow-xs' 
@@ -169,7 +186,7 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               Investment Models
-            </button>
+            </a>
           </nav>
 
           {/* Right Action CTAs */}
@@ -182,12 +199,13 @@ export const Header: React.FC<HeaderProps> = ({
               <span>Schedule Call</span>
             </button>
 
-            <button
-              onClick={() => handleNavClick('rfp')}
+            <a
+              href={PAGE_PATHS.rfp}
+              onClick={(event) => handlePageLinkClick(event, 'rfp')}
               className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-purple-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:from-amber-200 hover:to-amber-400 rounded-md shadow-md shadow-amber-500/20 border border-amber-400/50 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading"
             >
               Request Proposal
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -207,52 +225,59 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-purple-50 border-b border-purple-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
           <div className="grid grid-cols-1 gap-1 text-sm font-medium">
-            <button
-              onClick={() => handleNavClick('home')}
+            <a
+              href={PAGE_PATHS.home}
+              onClick={(event) => handlePageLinkClick(event, 'home')}
               className="text-left px-3 py-2.5 rounded-md text-purple-950 hover:bg-purple-100 font-semibold"
             >
               Overview
-            </button>
+            </a>
             <div className="px-3 pt-2 text-xs font-bold text-purple-800 uppercase tracking-wider">
               Services
             </div>
-            <button
-              onClick={() => handleNavClick('corporate-conferences')}
+            <a
+              href={PAGE_PATHS['corporate-conferences']}
+              onClick={(event) => handlePageLinkClick(event, 'corporate-conferences')}
               className="text-left px-4 py-2 rounded-md text-purple-900 hover:bg-purple-100 text-xs"
             >
               • Corporate Conferences &amp; Summits
-            </button>
-            <button
-              onClick={() => handleNavClick('brand-activations')}
+            </a>
+            <a
+              href={PAGE_PATHS['brand-activations']}
+              onClick={(event) => handlePageLinkClick(event, 'brand-activations')}
               className="text-left px-4 py-2 rounded-md text-purple-900 hover:bg-purple-100 text-xs"
             >
               • Brand Activations &amp; Launches
-            </button>
-            <button
-              onClick={() => handleNavClick('galas-celebrations')}
+            </a>
+            <a
+              href={PAGE_PATHS['galas-celebrations']}
+              onClick={(event) => handlePageLinkClick(event, 'galas-celebrations')}
               className="text-left px-4 py-2 rounded-md text-purple-900 hover:bg-purple-100 text-xs"
             >
               • Galas &amp; Social Celebrations
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('portfolio')}
+            <a
+              href={PAGE_PATHS.portfolio}
+              onClick={(event) => handlePageLinkClick(event, 'portfolio')}
               className="text-left px-3 py-2.5 rounded-md text-purple-950 hover:bg-purple-100 font-semibold"
             >
               Case Studies &amp; Portfolio
-            </button>
-            <button
-              onClick={() => handleNavClick('about')}
+            </a>
+            <a
+              href={PAGE_PATHS.about}
+              onClick={(event) => handlePageLinkClick(event, 'about')}
               className="text-left px-3 py-2.5 rounded-md text-purple-950 hover:bg-purple-100 font-semibold"
             >
               About &amp; Certified Leadership
-            </button>
-            <button
-              onClick={() => handleNavClick('pricing')}
+            </a>
+            <a
+              href={PAGE_PATHS.pricing}
+              onClick={(event) => handlePageLinkClick(event, 'pricing')}
               className="text-left px-3 py-2.5 rounded-md text-purple-950 hover:bg-purple-100 font-semibold"
             >
               Investment &amp; Pricing Models
-            </button>
+            </a>
           </div>
 
           <div className="pt-3 border-t border-purple-200 flex flex-col space-y-2">
@@ -265,12 +290,16 @@ export const Header: React.FC<HeaderProps> = ({
             >
               Schedule Discovery Call
             </button>
-            <button
-              onClick={() => handleNavClick('rfp')}
+            <a
+              href={PAGE_PATHS.rfp}
+              onClick={(event) => {
+                handlePageLinkClick(event, 'rfp');
+                setMobileMenuOpen(false);
+              }}
               className="w-full py-2.5 text-center text-xs font-bold uppercase tracking-wider text-purple-950 bg-gradient-to-r from-amber-300 to-amber-400 rounded-md shadow-sm"
             >
               Request a Proposal (RFP)
-            </button>
+            </a>
           </div>
         </div>
       )}

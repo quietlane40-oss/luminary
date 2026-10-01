@@ -281,7 +281,7 @@ export const InquiryRFPView: React.FC<InquiryRFPViewProps> = ({
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-purple-950 mb-4">
-            Tell Us About Your Event
+            Plan Your Next Event With Luminary Guild
           </h1>
 
           <p className="text-sm sm:text-base text-purple-800/80 leading-relaxed">
