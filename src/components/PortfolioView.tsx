@@ -229,20 +229,20 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
   },
   {
     ...CASE_STUDIES[1],
-    id: 'pioneer-thika-wedding',
-    title: 'A Wedding Celebration at Pioneer',
+    id: 'pioneer-thika-graduation',
+    title: 'A Graduation Ceremony at Pioneer',
     client: 'Private Family',
     category: 'gala',
-    categoryLabel: 'Wedding & Bridal Celebration',
+    categoryLabel: 'Graduation & Academic Celebration',
     location: 'Pioneer Thika',
     guestCount: 'Family & Friends',
-    budgetBracket: 'Wedding Production Scope',
-    heroImage: new URL('../../assets/wed.jpeg', import.meta.url).href,
-    summary: 'A wedding celebration at Pioneer, Thika, bringing the couple’s loved ones together for a meaningful day with considered styling and coordinated event delivery.',
+    budgetBracket: 'Graduation Production Scope',
+    heroImage: new URL('../../assets/grad.jpeg', import.meta.url).href,
+    summary: 'A graduation ceremony at Pioneer, Thika, bringing the graduate’s loved ones together for a meaningful day with considered styling and coordinated event delivery.',
     brief: {
-      challenge: 'Coordinate the people, suppliers, and programme details needed to make the wedding day feel seamless for the couple and their guests.',
-      objective: 'Create a welcoming wedding experience that lets the couple and their families stay present throughout the celebration.',
-      stakeholders: 'The couple, their families, wedding party, venue team, and event suppliers.'
+      challenge: 'Coordinate the people, suppliers, and programme details needed to make the graduation day feel seamless for the graduate and their guests.',
+      objective: 'Create a welcoming graduation experience that lets the graduate and their families stay present throughout the celebration.',
+      stakeholders: 'The graduate, their families, graduation party, venue team, and event suppliers.'
     },
     strategyExecution: {
       spatialDesign: 'Prepared a ceremony and celebration setting suited to the venue and the couple’s wedding day.',
