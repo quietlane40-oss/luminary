@@ -237,7 +237,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
     location: 'Pioneer Thika',
     guestCount: 'Family & Friends',
     budgetBracket: 'Graduation Production Scope',
-    heroImage: new URL('../../assets/grad.jpeg', import.meta.url).href,
+    heroImage: new URL('../../assets/wed.jpeg', import.meta.url).href,
     summary: 'A graduation ceremony at Pioneer, Thika, bringing the graduate’s loved ones together for a meaningful day with considered styling and coordinated event delivery.',
     brief: {
       challenge: 'Coordinate the people, suppliers, and programme details needed to make the graduation day feel seamless for the graduate and their guests.',
