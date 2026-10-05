@@ -251,13 +251,13 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
       logisticsRisk: 'Aligned venue access, supplier schedules, setup, and event timing with the couple and wedding team.'
     },
     outcomeMetrics: {
-      primaryMetric: 'Wedding Day',
+      primaryMetric: 'Graduation Day',
       primaryLabel: 'Milestone Celebrated',
       secondaryMetric: 'Pioneer',
       secondaryLabel: 'Thika Venue',
       tertiaryMetric: 'Family & Friends',
       tertiaryLabel: 'Gathered to Celebrate',
-      roiSummary: 'A thoughtfully coordinated wedding celebration at Pioneer, Thika, shared with the couple’s loved ones.'
+      roiSummary: 'A thoughtfully coordinated graduation celebration at Pioneer, Thika, shared with the couple’s loved ones.'
     },
     testimonial: {
       quote: 'We were able to enjoy our day with family and friends while the details were taken care of.',
@@ -265,7 +265,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudy[] = [
       title: 'Couple',
       company: 'Private Family'
     },
-    tags: ['Wedding Production', 'Wedding & Bridal', 'Guest Experience', 'Event Coordination']
+    tags: ['Graduation Events', 'Private Celebrations', 'Pioneer', 'Guest Experience']
   },
   {
     ...CASE_STUDIES[0],
